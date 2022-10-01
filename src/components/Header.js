@@ -11,5 +11,8 @@ export default function Header() {
 
 
 const Headline = styled.h1`
-color: red;
+color: plum;
+font-size: 4rem;
+text-decoration: underline;
+
 `;

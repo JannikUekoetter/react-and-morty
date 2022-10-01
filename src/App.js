@@ -1,11 +1,10 @@
-import logo from "./logo.svg";
+
 import "./App.css";
 import Header from "./components/Header";
 import styled from "styled-components";
 import Card from "./components/Card";
 import Navbar from "./components/Navbar";
 import { useState, useEffect } from "react";
-import { type } from "@testing-library/user-event/dist/type";
 
 const URL = 'https://rickandmortyapi.com/api/character'; /* Das hier ist der API Link in einer Variablen */
 
@@ -38,16 +37,18 @@ function App() {
     </header>
     <main>
     <Card />
-    <ul>
-        {characters.map(({name, status, id, gender, species}) => (
-          <li key={id}>
+    <CardElements>
+        {characters.map(({name, status, id, gender, species, image}) => (
+          <li key={id} >
             <h2>{name}</h2>
             <p>Gender:{gender}</p>
             <p>Status:{status}</p>
             <p>Species:{species}</p>
+            <img src="{image}"></img>
+            <p>image: {image}</p>
           </li>
         ))}
-      </ul> {/* Hier wird über die gefetchten Characters gemappt */}
+      </CardElements> {/* Hier wird über die gefetchten Characters gemappt */}
     
       </main>
      <Navbar />
@@ -55,3 +56,8 @@ function App() {
 }
 
 export default App;
+
+const CardElements = styled.li`
+color: whitesmoke;
+list-style: none;
+`;
