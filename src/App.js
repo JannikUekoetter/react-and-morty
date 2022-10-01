@@ -41,11 +41,12 @@ function App() {
         {characters.map(({name, status, id, gender, species, image}) => (
           <li key={id} >
             <h2>{name}</h2>
-            <p>Gender:{gender}</p>
-            <p>Status:{status}</p>
-            <p>Species:{species}</p>
-            <img src="{image}"></img>
-            <p>image: {image}</p>
+            <p>Gender: {gender}</p>
+            
+            <p>Status: {status}</p>
+            <p>Species: {species}</p>
+            <img src={image} alt="img"></img>
+            
           </li>
         ))}
       </CardElements> {/* Hier wird über die gefetchten Characters gemappt */}
