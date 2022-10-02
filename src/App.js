@@ -2,9 +2,9 @@
 import "./App.css";
 import Header from "./components/Header";
 import styled from "styled-components";
-import Card from "./components/Card";
 import Navbar from "./components/Navbar";
 import { useState, useEffect } from "react";
+import MappedCharacters from "./components/MappedCharacters";
 
 const URL = 'https://rickandmortyapi.com/api/character'; /* Das hier ist der API Link in einer Variablen */
 
@@ -31,29 +31,21 @@ function App() {
     fetchCharacters();
   }, []);
 
-  return <div className="App">
-    <header>
+  return (
+  <div className="App">
       <Header />
-    </header>
-    <main>
-    <Card />
-    <CardElements>
-        {characters.map(({name, status, id, gender, species, image}) => (
-          <li key={id} >
-            <h2>{name}</h2>
-            <p>Gender: {gender}</p>
-            
-            <p>Status: {status}</p>
-            <p>Species: {species}</p>
-            <img src={image} alt="img"></img>
-            
-          </li>
+        {characters.map((character) => (
+           <MappedCharacters
+           name={character.name}
+           gender={character.gender}
+           status={character.status}
+           species={character.species}
+           image={character.image}
+        />
         ))}
-      </CardElements> {/* Hier wird über die gefetchten Characters gemappt */}
-    
-      </main>
      <Navbar />
-  </div>;
+  </div>
+  )
 }
 
 export default App;
