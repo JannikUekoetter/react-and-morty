@@ -1,26 +1,30 @@
 import React from 'react'
-import styled from "styled-components";
 
-export default function MappedCharacters({name, status, id, gender, species, image}) {
+const MappedCharacters = (props) => {
+  const FavoriteComponent = props.favoriteComponent;
   return (
     <div>
 
-        <li key={id} >
-            
-            <h1>{name}</h1>
-            <p>Gender: {gender}</p>
-            <p>Status: {status}</p>
-            <p>Species: {species}</p>
-            <div className='image-container'> {/* Hier können noch styled components für einen hover effect eingebaut werden */}
-            <img src={image} alt="img"></img>
+        <li key={props.id} >
+            <h1>{props.name}</h1>
+            <p>Gender: {props.gender}</p>
+            <p>Status: {props.status}</p>
+            <p>Species: {props.species}</p>
+            <div className='image-container'> {/* Hier können noch styled components für einen hover effect eingebaut */}
+            <img src={props.image} alt="img"></img>
+
             </div>
-            </li>
+            <FavoriteComponent />
+
+        </li>
     </div>
   )
 }
 
+export default MappedCharacters
 
+/* 
 const ImgDiv = styled.div`
 color: whitesmoke;
 list-style: none;
-`;
+`; */
