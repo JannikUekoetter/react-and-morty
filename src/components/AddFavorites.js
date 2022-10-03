@@ -1,17 +1,15 @@
 import React from 'react'
-import { MdOutlineFavorite } from "react-icons/md";
 
-const AddFavorites = () => {
+
+const AddFavorites = (props) => {
   return (
-    <>
-    <span className='favbutton'>
-        <h4>Add to Favorites</h4>
+    <div onClick={props.handleFavoritesClick}>
+    <span>
+        <h2>Your Favorites are listed below</h2>
         </span>
-        <button>
-            <MdOutlineFavorite/>
-        </button>
+        
 
-    </>
+    </div>
   )
 }
 export default AddFavorites
