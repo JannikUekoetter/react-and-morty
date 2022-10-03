@@ -10,21 +10,14 @@ const MappedCharacters = (props) => {
             <p>Gender: {props.gender}</p>
             <p>Status: {props.status}</p>
             <p>Species: {props.species}</p>
-            <div className='image-container'> {/* Hier können noch styled components für einen hover effect eingebaut */}
+            <div>
             <img src={props.image} alt="img"></img>
-
             </div>
-            <FavoriteComponent />
-
+           <FavoriteComponent
+           />
         </li>
     </div>
   )
 }
 
 export default MappedCharacters
-
-/* 
-const ImgDiv = styled.div`
-color: whitesmoke;
-list-style: none;
-`; */
