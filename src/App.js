@@ -3,11 +3,12 @@ import "./App.css";
 import Header from "./components/Header";
 /* import styled from "styled-components"; */
 import Navbar from "./components/Navbar";
+import Random from "./components/Random";
 import { useState, useEffect } from "react";
 import MappedCharacters from "./components/MappedCharacters";
 import AddFavorites from "./components/AddFavorites";
 import SearchBox from "./components/Searchbox";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate,  } from "react-router-dom";
 
 const URL = 'https://rickandmortyapi.com/api/character'; /* Das hier ist der API Link in einer Variablen */
 
@@ -47,7 +48,7 @@ function App() {
       <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
       <Routes>
       <Route
-  path="/"
+  exact path="/"
   element={(
     <>
       {characters.map((character) => (
@@ -65,11 +66,30 @@ function App() {
     </>
   )}
 />
+<Route
+  exact path="/favorites"
+  element={(
+    <>
+      <AddFavorites />
+    </>
+  )}
+/>
+
+<Route
+  exact path="/random"
+  element={(
+    <>
+      <Random />
+    </>
+  )}
+/>
 </Routes>
      <Navbar />
   </div>
   )
 }
+
+
 
 export default App;
 

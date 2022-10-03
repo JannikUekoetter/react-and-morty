@@ -1,5 +1,6 @@
 import React from 'react'
 import styled  from 'styled-components'
+import { Link } from 'react-router-dom';
 
 
 export default function Navbar() {
@@ -10,17 +11,13 @@ export default function Navbar() {
         <nav>
           <ul style={{ listStyle: 'none', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around' }}>
             <li>
-              <div style={{ width: 50, height: 50, backgroundColor: 'plum' }}>Nav 1</div>
+              <Link to="/" style={{ width: 100, height: 50}}>Home</Link>
             </li>
             <li>
-              <div style={{ width: 50, height: 50, backgroundColor: 'whitesmoke' }}>Nav 2</div>
+              <Link to="favorites" style={{ width: 100, height: 50}}>Favorites</Link>
             </li>
             <li>
-              <div style={{ width: 50, height: 50, backgroundColor: 'plum' }}>Nav 3</div>
-            </li>
-            <li>
-              <div style={{ width: 50, height: 50, backgroundColor: 'whitesmoke' }}>Nav 4</div>
-             
+              <Link to="random" style={{ width: 100, height: 50}}>Random</Link>
             </li>
             <div>
    
